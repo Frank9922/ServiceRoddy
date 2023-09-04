@@ -12,10 +12,9 @@ class Marcas extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'pais', 'anio', 'path_logo'];
-    protected $tmestamps = false;
 
     public function vehicles() : HasMany
         {
-            return $this->hasMany(Vehicles::class);
+            return $this->hasMany(Vehicles::class, 'marca_id');
         }
 }

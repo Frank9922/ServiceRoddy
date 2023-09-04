@@ -1,0 +1,77 @@
+[
+    {
+      "nombre": "Toyota",
+      "año": 1933,
+      "pais": "Japón"
+    },
+    {
+      "nombre": "Volkswagen",
+      "año": 1937,
+      "pais": "Alemania"
+    },
+    {
+      "nombre": "Nissan",
+      "año": 1933,
+      "pais": "Japón"
+    },
+    {
+      "nombre": "Chevrolet",
+      "año": 1911,
+      "pais": "Estados Unidos"
+    },
+    {
+      "nombre": "Ford",
+      "año": 1903,
+      "pais": "Estados Unidos"
+    },
+    {
+      "nombre": "Hyundai",
+      "año": 1967,
+      "pais": "Corea del Sur"
+    },
+    {
+      "nombre": "Renault",
+      "año": 1898,
+      "pais": "Francia"
+    },
+    {
+      "nombre": "Fiat",
+      "año": 1899,
+      "pais": "Italia"
+    },
+    {
+      "nombre": "Kia",
+      "año": 1944,
+      "pais": "Corea del Sur"
+    },
+    {
+      "nombre": "Volvo",
+      "año": 1927,
+      "pais": "Suecia"
+    },
+    {
+      "nombre": "Peugeot",
+      "año": 1810,
+      "pais": "Francia"
+    },
+    {
+      "nombre": "Mercedes-Benz",
+      "año": 1886,
+      "pais": "Alemania"
+    },
+    {
+      "nombre": "Mitsubishi",
+      "año": 1917,
+      "pais": "Japón"
+    },
+    {
+      "nombre": "Honda",
+      "año": 1948,
+      "pais": "Japón"
+    },
+    {
+      "nombre": "Suzuki",
+      "año": 1909,
+      "pais": "Japón"
+    }
+  ]

@@ -22,6 +22,7 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => Hash::make(123456789),
+            'path_photo' => 'Users-photos/'.fake()->image(storage_path('app/public/Users-photos'), 200, 200, null, false, false, (fake()->name())),
             'remember_token' => Str::random(10),
             'role_id' => 3
         ];

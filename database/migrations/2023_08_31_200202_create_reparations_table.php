@@ -18,11 +18,16 @@ return new class extends Migration
             $table->timestamp('duration');
             $table->unsignedBigInteger('status_id');
             $table->unsignedBigInteger('typeofrepari_id');
+            $table->unsignedBigInteger('vehicle_id');
             $table->string('materials');
-            $table->string('path_Bphotos');
-            $table->string('path_Aphotos');
+            $table->string('path_Bphotos')->nullable();
+            $table->string('path_Aphotos')->nullable();
             $table->string('observations');
             $table->timestamps();
+
+            $table->foreign('vehicle_id')
+                    ->references('id')
+                    ->on('vehicles');
 
             $table->foreign('status_id')
                     ->references('id')
