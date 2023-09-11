@@ -14,7 +14,7 @@ class ModelsCarsSeeder extends Seeder
      */
     public function run(): void
     {
-        $json = Storage::get('car-list.json');
+        $json = Storage::get('db.json');
         $data = json_decode($json);
 
         foreach($data as $item)

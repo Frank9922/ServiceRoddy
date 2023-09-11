@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\File;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\File;
 
 return new class extends Migration
 {
@@ -18,20 +18,20 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('path_photo')->nullable();
-            $table->unsignedBigInteger('role_id');
             $table->rememberToken();
-            $table->timestamps();
+            $table->foreignId('current_team_id')->nullable();
+            $table->string('profile_photo_path', 2048)->nullable();
+            $table->unsignedBigInteger('role_id')->default(3);
 
 
             $table->foreign('role_id')
                     ->references('id')
                     ->on('roles');
+            $table->timestamps();
         });
-
-        if(!File::exists(storage_path('app/public/Users-photos')))
+        if(!File::exists(storage_path('app/public/profile-photos')))
         {
-            File::makeDirectory(storage_path('app/public/Users-photos'));
+            File::makeDirectory(storage_path('app/public/profile-photos'));
         }
     }
 
@@ -40,7 +40,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        File::deleteDirectory(storage_path('app/public/Users-photos'));
+        File::deleteDirectory(storage_path('app/public/profile-photos'));
         Schema::dropIfExists('users');
     }
 };

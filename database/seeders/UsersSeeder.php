@@ -18,6 +18,7 @@ class UsersSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'adminrole@example.com',
             'password'=> Hash::make('123456789'),
+            'profile_photo_path' => 'profile-photos/'.fake()->image(storage_path('app/public/profile-photos'), 400, 300, false, false, false, "Admin")."",
             'role_id' => 1
         ]);
 
