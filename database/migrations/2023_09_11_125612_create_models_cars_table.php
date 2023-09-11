@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Facades\File;
 
 return new class extends Migration
 {
@@ -12,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('marcas', function (Blueprint $table) {
+        Schema::create('models_cars', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('path_logo')->default('none');
+            $table->unsignedBigInteger('marca_id');
             $table->timestamps();
-        });
 
-        if(!File::exists(storage_path('app/public/Marcas-photos'))){
-            File::makeDirectory(storage_path('app/public/Marcas-photos'));
-        }
+
+            $table->foreign('marca_id')
+                    ->references('id')
+                    ->on('marcas');
+        });
     }
 
     /**
@@ -29,7 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        File::deleteDirectory(storage_path('app/public/Marcas-photos'));
-        Schema::dropIfExists('marcas');
+        Schema::dropIfExists('models_cars');
     }
 };

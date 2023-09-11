@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             UsersSeeder::class,
             MarcasSeeder::class,
-            VehiclesSeeder::class,
+            ModelsCarsSeeder::class,
             TypeOfRepairSeeder::class,
-            StatusSeeder::class
+            StatusSeeder::class,
         ]);
     }
 }
